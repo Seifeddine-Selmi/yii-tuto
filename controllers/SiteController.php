@@ -142,10 +142,12 @@ class SiteController extends Controller
 
             // do something meaningful here about $model ...
 
-            return $this->render('entry-confirm', ['model' => $model]);
-        } else {
+            Yii::$app->session->setFlash('success','You have entered the data correctly');
+
+            // return $this->render('entry-confirm', ['model' => $model]);
+        }
             // either the page is initially displayed or there is some validation error
             return $this->render('entry', ['model' => $model]);
-        }
+
     }
 }
